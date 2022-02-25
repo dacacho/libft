@@ -6,7 +6,7 @@
 /*   By: danierod <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 15:29:57 by danierod          #+#    #+#             */
-/*   Updated: 2022/02/22 16:06:09 by danierod         ###   ########.fr       */
+/*   Updated: 2022/02/24 18:33:17 by danierod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,9 @@ void	*ft_calloc(size_t n, size_t s)
 {
 	char	*str;
 
-	if (!(str = malloc(n * s)))
+	if (!n || !s)
 		return (NULL);
-	bzero(str, n * s);
+	str = malloc(n * s);
+	ft_bzero(str, n * s);
 	return (str);
 }

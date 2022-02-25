@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strcdup.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danierod <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/15 10:14:10 by danierod          #+#    #+#             */
-/*   Updated: 2022/02/24 15:17:57 by danierod         ###   ########.fr       */
+/*   Created: 2022/02/22 19:28:36 by danierod          #+#    #+#             */
+/*   Updated: 2022/02/22 19:42:34 by danierod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *b, int c, size_t len)
+char	*ft_strcdup(const char *s1, int c)
 {
-	unsigned char	*s;
+	char	*s2;
+	size_t	i;
 
-	s = (unsigned char *)b;
-	while (len-- > 0)
-	{
-		*s++ = (unsigned char)c;
-	}
-	return (b);
+	if (!s || !c)
+		return (NULL);
+	i = 0;
+	while (s1[i] != (char)c && s1[i] != '\0')
+		i++;
+	s2 = malloc(sizeof(char) * i + 1);
+	s2[i] = '\0';
+	while (i-- > 0)
+		s2[i] = s1[i];
+	return (s2);
 }
