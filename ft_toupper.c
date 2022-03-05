@@ -6,11 +6,16 @@
 /*   By: danierod <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 17:40:13 by danierod          #+#    #+#             */
-/*   Updated: 2022/02/17 17:46:42 by danierod         ###   ########.fr       */
+/*   Updated: 2022/03/05 10:52:52 by danierod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static int	ft_islower(int c)
+{
+	return (c > 96 && c < 123);
+}
 
 int	ft_toupper(int c)
 {
