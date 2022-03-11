@@ -1,18 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_islower.c                                       :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danierod <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/15 09:23:10 by danierod          #+#    #+#             */
-/*   Updated: 2022/02/15 09:24:10 by danierod         ###   ########.fr       */
+/*   Created: 2022/03/06 10:17:08 by danierod          #+#    #+#             */
+/*   Updated: 2022/03/10 08:40:34 by danierod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_islower(int c)
+t_list	*ft_lstlast(t_list *lst)
 {
-	return (c > 96 && c < 123);
+	if (!lst)
+		return (NULL);
+	while (lst)
+	{
+		if (lst->next == NULL)
+			return (lst);
+		else
+			lst = lst->next;
+	}
+	return (NULL);
 }

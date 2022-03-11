@@ -1,30 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcdup.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danierod <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/22 19:28:36 by danierod          #+#    #+#             */
-/*   Updated: 2022/02/22 19:42:34 by danierod         ###   ########.fr       */
+/*   Created: 2022/03/09 22:12:51 by danierod          #+#    #+#             */
+/*   Updated: 2022/03/10 07:40:08 by danierod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcdup(const char *s1, int c)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	char	*s2;
-	size_t	i;
+	t_list	*dummy1;
+	t_list	*dummy2;
 
-	if (!s || !c)
-		return (NULL);
-	i = 0;
-	while (s1[i] != (char)c && s1[i] != '\0')
-		i++;
-	s2 = malloc(sizeof(char) * i + 1);
-	s2[i] = '\0';
-	while (i-- > 0)
-		s2[i] = s1[i];
-	return (s2);
+	if (!lst)
+		return (0);
+	dummy1 = NULL;
+	while (lst)
+	{
+		dummy2 = ft_lstnew(f(lst -> content));
+		if (!dummy2)
+		{
+			ft_lstclear(&dummy1, (void (*)(void *))del);
+			return (0);
+		}
+		ft_lstadd_back(&dummy1, dummy2);
+		lst = lst -> next;
+	}
+	return (dummy1);
 }

@@ -6,7 +6,7 @@
 /*   By: danierod <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 12:09:23 by danierod          #+#    #+#             */
-/*   Updated: 2022/03/05 13:52:03 by danierod         ###   ########.fr       */
+/*   Updated: 2022/03/06 11:22:50 by danierod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 {
 	if (!lst)
 		return ;
-	else
+	if (*lst)
 		new->next = *lst;
 	*lst = new;
 }

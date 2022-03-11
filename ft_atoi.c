@@ -6,38 +6,34 @@
 /*   By: danierod <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 10:54:16 by danierod          #+#    #+#             */
-/*   Updated: 2022/03/05 10:40:45 by danierod         ###   ########.fr       */
+/*   Updated: 2022/03/10 06:20:04 by danierod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_isspace(int c)
-{
-	return (c > 8 && < 14 || c == 32);
-}
-
-static int	ft_isdigit(int c)
-{
-	return (c > 47 && c < 58);
-}
-
 int	ft_atoi(const char *str)
 {
-	int	nb;
-	int	mult;
+	int		sign;
+	int		nb;
+	int		i;
 
 	nb = 0;
-	mult = 1;
-	while (ft_isspace(*str))
-		str++;
-	while (*str == 43 || *str == 45)
+	sign = 1;
+	i = 0;
+	while (str[i] && (str[i] == '\f' || str[i] == '\t' || str[i] == ' '
+			|| str[i] == '\n' || str[i] == '\r' || str[i] == '\v'))
+		i++;
+	if (str[i] == '-' || str[i] == '+')
 	{
-		if (*str == 43)
-			mult *= -1;
-		str++;
+		if (str[i++] == '-')
+			sign = -1;
 	}
-	while (ft_isdigit(*str))
-		nb = nb * 10 + *str++ - 48;
-	return (nb * mult);
+	while (str[i] && str[i] >= '0' && str[i] <= '9')
+	{
+		nb *= 10;
+		nb += str[i++] - '0';
+	}
+	nb *= sign;
+	return (nb);
 }

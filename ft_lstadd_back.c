@@ -1,18 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isupper.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danierod <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/14 18:22:10 by danierod          #+#    #+#             */
-/*   Updated: 2022/02/15 09:22:42 by danierod         ###   ########.fr       */
+/*   Created: 2022/03/06 11:02:50 by danierod          #+#    #+#             */
+/*   Updated: 2022/03/11 13:36:32 by danierod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isupper(int c)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	return (c > 64 && c < 91);
+	t_list	*last;
+
+	last = *lst;
+	if (!last)
+	{
+		*lst = new;
+		return ;
+	}
+	last = ft_lstlast(last);
+	last->next = new;
 }

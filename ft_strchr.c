@@ -6,7 +6,7 @@
 /*   By: danierod <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 17:48:14 by danierod          #+#    #+#             */
-/*   Updated: 2022/02/24 18:59:51 by danierod         ###   ########.fr       */
+/*   Updated: 2022/03/10 06:53:49 by danierod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,16 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	char	*dummy;
+	char	nc;
 
-	dummy = (char *)s;
-	while (*dummy != c)
+	nc = (char)c;
+	while (*s != '\0')
 	{
-		if (*dummy == '\0')
-			return (NULL);
-		dummy++;
+		if (*s == nc)
+			return ((char *)s);
+		s++;
 	}
-	return (dummy);
+	if (*s == nc)
+		return ((char *)s);
+	return (NULL);
 }
