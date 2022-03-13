@@ -6,7 +6,7 @@
 /*   By: danierod <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 15:35:38 by danierod          #+#    #+#             */
-/*   Updated: 2022/03/10 07:09:07 by danierod         ###   ########.fr       */
+/*   Updated: 2022/03/12 15:15:48 by danierod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ char	*ft_strdup(const char *s1)
 	char	*s2;
 	size_t	i;
 
-	if (!s1)
-		return (NULL);
 	s2 = (char *)malloc(sizeof(char) * (ft_strlen(s1) + 1));
 	if (!s2)
 		return (NULL);

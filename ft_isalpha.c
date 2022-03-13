@@ -6,18 +6,18 @@
 /*   By: danierod <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 09:24:22 by danierod          #+#    #+#             */
-/*   Updated: 2022/03/09 22:32:57 by danierod         ###   ########.fr       */
+/*   Updated: 2022/03/12 14:31:47 by danierod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_isupper(char c)
+static int	ft_isupper(int c)
 {
 	return (c >= 'A' && c <= 'Z');
 }
 
-static int	ft_islower(char c)
+static int	ft_islower(int c)
 {
 	return (c >= 'a' && c <= 'z');
 }
