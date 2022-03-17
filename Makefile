@@ -58,7 +58,9 @@ SOURCES = ft_atoi.c			  \
 		  ft_strtrim.c		  \
 		  ft_substr.c		  \
 		  ft_tolower.c		  \
-		  ft_toupper.c		  
+		  ft_toupper.c		  \
+		  ft_pfile1.c 		  \
+		  ft_pfile2.c
 
 BONUS_SOURCES = ft_lstadd_back.c	\
 		  ft_lstadd_front.c	  		\
