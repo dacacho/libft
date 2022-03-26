@@ -1,41 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_pfile1.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danierod <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/24 14:38:56 by danierod          #+#    #+#             */
-/*   Updated: 2022/03/26 06:02:39 by danierod         ###   ########.fr       */
+/*   Created: 2022/03/17 15:09:23 by danierod          #+#    #+#             */
+/*   Updated: 2022/03/26 08:16:20 by danierod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(const char *s, unsigned int start, size_t len)
+int	numlen(int n)
 {
-	char			*sub;
-	size_t			i;
+	int	c;
 
-	if (!s)
-		return (NULL);
-	if (len > ft_strlen(s))
-		len = ft_strlen(s);
-	if (ft_strlen((char *)s) < start)
+	c = 0;
+	if (n == 0)
 	{
-		sub = malloc(sizeof(char));
-		*sub = '\0';
-		return (sub);
+		c = 1;
+		return (c);
 	}
-	sub = (char *)malloc((len + 1) * sizeof(char));
-	if (!sub)
-		return (NULL);
-	i = 0;
-	while (i < len)
+	if (n < 0)
+		c++;
+	while (n)
 	{
-		sub[i] = (char)s[i + start];
-		i++;
+		c++;
+		n = n / 10;
 	}
-	sub[i] = '\0';
-	return (sub);
+	return (c);
 }

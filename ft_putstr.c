@@ -1,41 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danierod <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/24 14:38:56 by danierod          #+#    #+#             */
-/*   Updated: 2022/03/26 06:02:39 by danierod         ###   ########.fr       */
+/*   Created: 2022/03/26 08:12:04 by danierod          #+#    #+#             */
+/*   Updated: 2022/03/26 08:12:17 by danierod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(const char *s, unsigned int start, size_t len)
+int	ft_putstr(char *s)
 {
-	char			*sub;
-	size_t			i;
+	int	len;
 
+	len = 0;
 	if (!s)
-		return (NULL);
-	if (len > ft_strlen(s))
-		len = ft_strlen(s);
-	if (ft_strlen((char *)s) < start)
+		s = "(null)";
+	while (*s != '\0')
 	{
-		sub = malloc(sizeof(char));
-		*sub = '\0';
-		return (sub);
+		ft_putchar(*s);
+		s++;
+		len++;
 	}
-	sub = (char *)malloc((len + 1) * sizeof(char));
-	if (!sub)
-		return (NULL);
-	i = 0;
-	while (i < len)
-	{
-		sub[i] = (char)s[i + start];
-		i++;
-	}
-	sub[i] = '\0';
-	return (sub);
+	return (len);
 }

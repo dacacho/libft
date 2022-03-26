@@ -6,7 +6,7 @@
 #    By: danierod <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/09 20:24:04 by danierod          #+#    #+#              #
-#    Updated: 2022/03/17 09:17:38 by danierod         ###   ########.fr        #
+#    Updated: 2022/03/26 08:26:58 by danierod         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,6 +38,10 @@ SOURCES = ft_atoi.c			  \
 		  ft_memcpy.c		  \
 		  ft_memmove.c		  \
 		  ft_memset.c		  \
+		  ft_numlen.c		  \
+		  ft_printf.c		  \
+		  ft_putchar.c		  \
+		  ft_putstr.c		  \
 		  ft_putchar_fd.c	  \
 		  ft_putendl_fd.c	  \
 		  ft_putnbr_fd.c	  \
@@ -58,9 +62,7 @@ SOURCES = ft_atoi.c			  \
 		  ft_strtrim.c		  \
 		  ft_substr.c		  \
 		  ft_tolower.c		  \
-		  ft_toupper.c		  \
-		  ft_pfile1.c 		  \
-		  ft_pfile2.c
+		  ft_toupper.c		  
 
 BONUS_SOURCES = ft_lstadd_back.c	\
 		  ft_lstadd_front.c	  		\
