@@ -6,7 +6,7 @@
 #    By: danierod <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/09 20:24:04 by danierod          #+#    #+#              #
-#    Updated: 2022/03/26 08:26:58 by danierod         ###   ########.fr        #
+#    Updated: 2022/11/16 13:42:23 by danierod         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = libft.a
 
 CC = cc
 
-FLAGS = -Wall -Werror -Wextra -Fsanitize=address
+FLAGS = -Wall -Werror -Wextra #-Fsanitize=address
 
 RM = rm -f
 
@@ -74,10 +74,13 @@ BONUS_SOURCES = ft_lstadd_back.c	\
 		  ft_lstmap.c		  		\
 		  ft_lstsize.c		  
 
+#PRINT_SOURCES = ft_pfile1.c ft_pfile2.c ft_printf.c
 
 OBJECTS = $(SOURCES:.c=.o)
 
 BONUS_OBJECTS = $(BONUS_SOURCES:.c=.o)
+
+#PRINT_OBJECTS = $(PRINT_SOURCES:.c=.o)
 
 all : $(NAME)
 
@@ -93,7 +96,7 @@ bonus : $(NAME) $(BONUS_OBJECTS)
 		$(CC) $(FLAGS) -I $(INCLUDE) -c $< -o $(<:.c=.o)
 
 clean:
-		$(RM) $(OBJECTS) $(BONUS_OBJECTS)
+		$(RM) $(OBJECTS) $(BONUS_OBJECTS) $(PRINT_OBJECTS)
 
 fclean: clean
 		$(RM) $(NAME)
